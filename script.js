@@ -16,6 +16,12 @@ var generateBtn = document.querySelector("#generate");
 function passwordPrompts() {
   let passwordLength = parseInt(prompt("How many characters would you like for your password to be? [Between 8 and 128 characters]"));
 
+  // Must make these global so I can use in the second if statement
+  let lowerCase;
+  let upperCase;
+  let number;
+  let specialCharacters;
+
   // Solves 8 - 128 Characters Issue - Choose Length Issue!
   if (passwordLength >= 8 && passwordLength < 128 && !isNaN(passwordLength)) {
     // Ask users what prompts they'd like to include - Solves Character Types
@@ -29,7 +35,7 @@ function passwordPrompts() {
   }
 
   // Check that they have at least 1 confirmed
-  if (upperCase !== true && lowerCase !== true && numbers !== true && specialCharacters !== true) {
+  if (!upperCase && !lowerCase && !number && !specialCharacters) {
     alert("Must have one prompt selected!")
     return false;
   }
@@ -50,7 +56,6 @@ function passwordPrompts() {
   if (specialCharacters === true) {
     confirmedArrayChars.concat(specialCharss);
   }
-
 }
 
 function generatePassword() {

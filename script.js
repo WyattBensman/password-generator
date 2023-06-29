@@ -9,6 +9,7 @@ const specialChars = [" ", "!", ".", "#", "$", "%", "&", "'", "(", ")", "*", "+"
 // Password Character Array
 let confirmedArrayChars = [];
 
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -49,6 +50,18 @@ function passwordPrompts() {
   if (specialCharacters === true) {
     confirmedArrayChars.concat(specialCharss);
   }
+
+}
+
+function generatePassword() {
+  let newPassword = "";
+  passwordPrompts();
+
+  for (let i = 0; i < passwordLength; i++) {
+    let randomValue = Math.floor(Math.random() * confirmedArrayChars.length)
+  }
+  newPassword = newPassword + randomValue.charAt(randomValue);
+  console.log(newPassword);
 }
 
 

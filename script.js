@@ -28,7 +28,7 @@ function passwordPrompts() {
     lowerCase = confirm('Would you like to include Lower Case letters?');
     upperCase = confirm('Would you like to include Upper Case letters?');
     number = confirm('Would you like to include numbers?');
-    specialCharacters = confirm('Would you like to include special characters?');
+    sspecialCharacters = confirm('Would you like to include special characters?');
   } else {
     alert("Must choose a number between 8 and 128!")
     return false;
@@ -42,11 +42,11 @@ function passwordPrompts() {
 
   // Adds Characters to confirmedArrayChars
   if (lowerCase === true) {
-    confirmedArrayChars.concat(lowerletters);
+    confirmedArrayChars.concat(lowerLetters);
   }
 
   if (upperCase === true) {
-    confirmedArrayChars.concat(upperletters);
+    confirmedArrayChars.concat(upperLetters);
   }
 
   if (number === true) {
@@ -54,7 +54,7 @@ function passwordPrompts() {
   }
 
   if (specialCharacters === true) {
-    confirmedArrayChars.concat(specialCharss);
+    confirmedArrayChars.concat(specialChars);
   }
 }
 

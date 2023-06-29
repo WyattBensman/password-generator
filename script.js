@@ -19,10 +19,10 @@ function passwordPrompts() {
   // Solves 8 - 128 Characters Issue - Choose Length Issue!
   if (passwordLength >= 8 && passwordLength < 128 && !isNaN(passwordLength)) {
     // Ask users what prompts they'd like to include - Solves Character Types
-    let lowerCase = confirm('Would you like to include Upper Case letters?');
+    let lowerCase = confirm('Would you like to include Lower Case letters?');
     let upperCase = confirm('Would you like to include Upper Case letters?');
-    let number = confirm('Would you like to include Upper Case letters?');
-    let specialCharacters = confirm('Would you like to include Upper Case letters?');
+    let number = confirm('Would you like to include numbers?');
+    let specialCharacters = confirm('Would you like to include special characters?');
   } else {
     alert("Must choose a number between 8 and 128!")
     return false;
@@ -76,11 +76,5 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-// KEEP THIS
 generateBtn.addEventListener("click", writePassword);
 
-
-/* USE CONCAT
- */
-
-/* If they say all no, they have to pick */

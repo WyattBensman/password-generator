@@ -8,13 +8,14 @@ const specialChars = [" ", "!", ".", "#", "$", "%", "&", "'", "(", ")", "*", "+"
 
 // Password Character Array
 let confirmedArrayChars = [];
+let passwordLength;
 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 function passwordPrompts() {
-  let passwordLength = parseInt(prompt("How many characters would you like for your password to be? [Between 8 and 128 characters]"));
+  passwordLength = parseInt(prompt("How many characters would you like for your password to be? [Between 8 and 128 characters]"));
 
   // Must make these global so I can use in the second if statements
   let lowerCase;

@@ -29,7 +29,7 @@ function passwordPrompts() {
     lowerCase = confirm('Would you like to include Lower Case letters?');
     upperCase = confirm('Would you like to include Upper Case letters?');
     number = confirm('Would you like to include numbers?');
-    sspecialCharacters = confirm('Would you like to include special characters?');
+    specialCharacters = confirm('Would you like to include special characters?');
   } else {
     alert("Must choose a number between 8 and 128!")
     return false;
@@ -43,19 +43,19 @@ function passwordPrompts() {
 
   // Adds Characters to confirmedArrayChars
   if (lowerCase === true) {
-    confirmedArrayChars.concat(lowerLetters);
+    confirmedArrayChars = confirmedArrayChars.concat(lowerLetters);
   }
 
   if (upperCase === true) {
-    confirmedArrayChars.concat(upperLetters);
+    confirmedArrayChars = confirmedArrayChars.concat(upperLetters);
   }
 
   if (number === true) {
-    confirmedArrayChars.concat(numbers);
+    confirmedArrayChars = confirmedArrayChars.concat(numbers);
   }
 
   if (specialCharacters === true) {
-    confirmedArrayChars.concat(specialChars);
+    confirmedArrayChars = confirmedArrayChars.concat(specialChars);
   }
 }
 
@@ -65,9 +65,10 @@ function generatePassword() {
 
   for (let i = 0; i < passwordLength; i++) {
     let randomValue = Math.floor(Math.random() * confirmedArrayChars.length)
+    newPassword = newPassword + confirmedArrayChars[randomValue];
   }
-  newPassword = newPassword + randomValue.charAt(randomValue);
-  console.log(newPassword);
+
+  alert("Generated Password: " + newPassword);
 }
 
 // Write password to the #password input
@@ -76,7 +77,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
